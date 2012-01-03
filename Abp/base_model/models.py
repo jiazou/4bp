@@ -46,15 +46,12 @@ class Product(models.Model):
     # many to many association with a deal
     deal = models.ManyToManyField(Deal);
     
-class Money(models.Model):
-    local_currency_value = models.IntegerField();
-    currency = models.CharField(max_length = 4)
-    exchange_rate_to_usd = models.DecimalField(max_digit = 20, decimal_places = 6)
-    
 class ProductPriceHistory(models.Model):
     # the product associated with the history
     product_id = models.IntegerField()
     # the time at which this price became active.
-    time = models.DateTimeField('time at which this active is active')
+    time = models.DateTimeField('time at which this price becomes active')
     # the _smallest_ amount at which the product was priced at the previously defined date.
-    price = models.ForeignKey(Money)
+    local_currency_value = models.IntegerField();
+    currency = models.CharField(max_length = 4)
+    exchange_rate_to_usd = models.DecimalField(max_digit = 20, decimal_places = 6)

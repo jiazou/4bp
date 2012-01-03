@@ -5,6 +5,9 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
+    ('Chenjie Gu', 'chenjie.gu@gmail.com'),
+    ('Hao Zhang', 'zhanghao8301@gmail.com'),
+    ('Isaac Liu', 'liu.isaac@gmail.com'),
     ('Jia Zou', 'jiazou11@gmail.com'),
 )
 
@@ -13,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/jiazou/workspace/eclipseWorkspace/Abp/sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'sqlite.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
