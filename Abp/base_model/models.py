@@ -1,4 +1,5 @@
 from django.db import models
+import model_fields
 
 # our database is designed to allow the following operations:
 # 1. save a deal specific to a product/source
@@ -67,9 +68,5 @@ class ProductPriceHistory(models.Model):
     product_id = models.IntegerField()
     # the source for which we are storing the history.
     source_id = models.IntegerField()
-    # TODO(jiazou): make time and price a custom field
-    # the time at which this price became active.
-    time = models.DateTimeField('time at which this price becomes active')
-    # the _smallest_ amount at which the product was priced at the previously defined date.
-    local_currency_value = models.IntegerField();
-    currency = models.CharField(max_length = 3)
+    # a tuple of time and price for a particular product from a particular source.
+    time_price = model_fields.TimePriceField()
