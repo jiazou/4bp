@@ -18,12 +18,12 @@ class TimePrice() :
     
 class TimePriceField(models.Field):
 
-    description = "A mapping from time to prices"
+    description = "A tuple of time prices"
 
     __metaclass__ = models.SubfieldBase
 
     def __init__(self, *args, **kwargs):
-        kwargs['max_length'] = 104
+        kwargs['max_length'] = 100
         super(TimePriceField, self).__init__(*args, **kwargs)
         
     def db_type(self, connection):
